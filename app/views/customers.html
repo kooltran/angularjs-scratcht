@@ -1,0 +1,22 @@
+<h2>{{ appSettings.title }}</h2>
+<div>Filter <input type="text"></div>
+
+<table>
+    <tr>
+        <th ng-click="doSort('name')">Name</th>
+        <th ng-click="doSort('city')">City</th>
+        <th ng-click="doSort('joined')">Joined</th>
+        <th ng-click="doSort('order')">total</th>
+        <th>Link</th>
+    </tr>
+    <tr ng-repeat="cust in customers">
+        <td>{{cust.id}}</td>
+        <td>{{ cust.name | uppercase }}</td>
+        <td>{{ cust.city }}</td>
+        <td>{{ cust.joined | date }}</td>
+        <td>{{ cust.orderTotal | currency }}</td>
+        <td><a href="#!/orders/{{cust.id}}">View Orders</a></td>
+    </tr>
+</table>
+<br />
+<span>Customers: {{ customers.length }}</span>

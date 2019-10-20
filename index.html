@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="customersApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AngularJs Hello</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<!-- 
+<body ng-init="data={name: 'kool', isVisible:true, loggedIn:true, status:'red'}">
+    <div ng-cloak>
+        <div ng-switch on="data.loggedIn">
+            <div ng-switch-when="true" ng-class="data.status">Welcome: {{ data.name }}</div>
+            <div ng-switch-default ng-class="data.status">Loggin</div>
+        </div>
+        <div ng-show="data.isVisible">
+            <input type="text" ng-model="name" />
+            {{ data.name }}
+        </div>
+        <div>Show <input type="checkbox" ng-model="data.isVisible"></div>
+        <br />
+        <button ng-click="name='thuthu'">Change name</button>
+    </div>
+</body> -->
+
+<!-- FILTER     -->
+
+<!-- <body ng-init="customers=[{name:'kool', city:'hcm', joined: '2018-11-09', orderTotal:'9.993'}, {name:'john', city:'hanoi', joined: '2018-08-12', orderTotal:'39.03'}, {name:'James', city:'danang', joined: '2018-12-12', orderTotal:'59.03'}]">
+    <div>Filter <input type="text" ng-model="customerFilter.name"></div>
+
+
+    <table>
+        <tr>
+            <th ng-click="sortBy='name';reverse=!reverse">Name</th>
+            <th ng-click="sortBy='city';reverse=!reverse">City</th>
+            <th ng-click="sortBy='joined';reverse=!reverse">Joined</th>
+            <th ng-click="sortBy='orderTotal';reverse=!reverse">total</th>
+        </tr>
+        <tr ng-repeat="cust in customers | filter:customerFilter | orderBy:sortBy:reverse">
+            <td>{{ cust.name | uppercase }}</td>
+            <td>{{ cust.city }}</td>
+            <td>{{ cust.joined | date }}</td>
+            <td>{{ cust.orderTotal | currency:'VND' }}</td>
+        </tr>
+    </table>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+
+</body> -->
+
+
+<!-- REFACTOR WITH CONTROLLER -->
+
+<body>
+
+    <div ng-view></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular-route.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/controllers/customersController.js"></script>
+    <script src="app/controllers/ordersController.js"></script>
+    <script src="app/services/customersFactory.js"></script>
+    <script src="app/services/customersService.js"></script>
+    <script src="app/services/values.js"></script>
+</body>
+
+</html>
